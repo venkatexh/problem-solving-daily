@@ -21,5 +21,12 @@ struct Node {
 
 void invert(struct Node* root)
 {
+    if(root == NULL)
+        return;
     
+    invert(root->left);
+    invert(root->right);
+    struct Node *temp = root->left;
+    root->left = root->right;
+    root->right = temp;
 }
