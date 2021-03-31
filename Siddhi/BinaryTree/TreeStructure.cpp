@@ -18,3 +18,27 @@ struct Node {
         right = NULL;
     }
 };
+
+void createTree(int arr[],int n,struct Node *root)
+{
+    for(int i=0;i<n;i++)
+    {
+        root->data=arr[i];
+        
+    }
+}
+
+void printInorder(struct Node* node)
+{
+    if (node == NULL)
+        return;
+ 
+    /* first recur on left child */
+    printInorder(node->left);
+ 
+    /* then print the data of node */
+    cout << node->data << " ";
+ 
+    /* now recur on right child */
+    printInorder(node->right);
+}
